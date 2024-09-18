@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "lib": ["deno.ns", "dom", "esnext"],
+    "strict": true
+  },
+  "tasks": {
+    "start": "deno run --allow-net --allow-read --allow-env --unstable-kv --watch app.ts",
+    "unitTest": "deno test --allow-read --allow-write --allow-net tests/db_test.ts",
+    "integrationTest": "deno test --allow-read --allow-write --allow-net tests/todo_test.ts"
+  },
+  "imports": {
+    "kv_interface": "./types/kv_interface.ts",
+    "serve": "https://deno.land/std/http/server.ts"
+  }
+}
